@@ -1,0 +1,259 @@
+/* Base container styles - minimal, inheriting from parent */
+.slot-text-container,
+.slot-text-words-container {
+  display: inline-block;
+  position: relative;
+  min-height: 1em;
+  overflow: hidden;
+}
+
+/* Character styles - minimal, inheriting from parent */
+.slot-char {
+  display: inline-block;
+  text-align: center;
+  min-width: 0.6em;
+  position: relative;
+  backface-visibility: hidden; /* Prevent flickering during animations */
+}
+
+.slot-space {
+  min-width: 0.3em;
+}
+
+/* Word container styles - minimal */
+.slot-text-words-container {
+  min-width: 4em;
+  text-align: center;
+}
+
+/* Cursor animation */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Animation keyframes for different easing types */
+
+/* Bounce easing animations */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+}
+
+/* Elastic easing animations */
+@keyframes elasticIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  55% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+  85% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes elasticOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  15% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  30% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  45% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+/* Smooth easing animations */
+@keyframes smoothIn {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes smoothOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+}
+
+/* Sharp easing animations */
+@keyframes sharpIn {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-5px);
+    opacity: 0.8;
+  }
+  80% {
+    transform: translateY(2px);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes sharpOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateY(2px);
+    opacity: 0.9;
+  }
+  40% {
+    transform: translateY(-5px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+}
+
+/* Linear easing animations */
+@keyframes linearIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes linearOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Apply animations based on easing type */
+.slot-easing-bounce .slot-char-animated {
+  animation: bounceIn 0.5s forwards;
+}
+
+.slot-easing-elastic .slot-char-animated {
+  animation: elasticIn 0.7s forwards;
+}
+
+.slot-easing-smooth .slot-char-animated {
+  animation: smoothIn 0.4s forwards;
+}
+
+.slot-easing-sharp .slot-char-animated {
+  animation: sharpIn 0.5s forwards;
+}
+
+.slot-easing-linear .slot-char-animated {
+  animation: linearIn 0.3s forwards;
+}
+
+/* Slot machine animation for characters */
+@keyframes slotMachine {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Slot machine animation for character exit */
+@keyframes slotMachineExit {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
