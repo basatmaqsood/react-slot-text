@@ -16,6 +16,8 @@ or using yarn:
 yarn add react-slot-text
 ```
 
+You must have latest React version installed. If you see any error, make sure you upgrade your react to latest version. It might not work in old versions
+
 ## Usage
 
 ### Importing the Components
