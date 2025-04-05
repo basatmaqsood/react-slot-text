@@ -1,6 +1,6 @@
 {
-  "name": "react-slot-text",
-  "version": "2.0.0",
+  "name": "@basatmaqsood/react-slot",
+  "version": "2.0.2",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
